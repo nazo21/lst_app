@@ -5,7 +5,7 @@
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  background-color: rgb(160, 235, 203);
+  background-color: rgb(215, 245, 232);
 
 }
 
@@ -13,6 +13,8 @@
    
   text-align: center;
   align-items: center;
+  
 
 }
+
 
