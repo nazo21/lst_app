@@ -11,18 +11,25 @@ export default function MyApp(chans) {
   const [inputval, setinputval] =  useState('');
   
   const add_thing = () =>{
-   if(inputval.trim() !== ' '){
+   if(inputval.trim() !== ''){
     setlists([...things, inputval]);
     setinputval('');
+   }else{
+     alert("Input cannot be empty");
    }
-  }
+  };
    const remove_thing = (index) => {
     const new_lst = things.filter((_, i) => i !== index);
       setlists(new_lst);
   }
   
-
-
+ /*// Get the info to backend
+ React.useEffect(() => {
+  fetch("/api")
+    .then((res) => res.json())
+    .then((data) => setData(data.message));
+}, []);
+*/
   //handleSubmit: function(e){ if (!this.validate()) { e.preventDefault() } }
   //For the John Doe I want to create Profiles in the future
   // It will correct to the user's name
@@ -30,6 +37,7 @@ export default function MyApp(chans) {
     <div class = "App">
       <h2>Welcome John Doe, Please add to your list</h2>
       <h3>List 1</h3>
+      
       <label>
        
         <input
@@ -50,7 +58,7 @@ export default function MyApp(chans) {
       }modal nested>
       
       {close => (
-        <div>
+        <div class = "Pops">
           Are you sure you want to submit this?
           <button onClick={() => close()}>Yes</button>
           <button onClick={() => close()}>No</button>
