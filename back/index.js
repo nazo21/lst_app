@@ -1,18 +1,24 @@
 
-const express = require("express");
+
+
+//const PORT = process.env.PORT || 8081;
+
+//const express = require('express');
+//const app = express();
+const express = require('express');
 const app = express();
+const port = 3000;
 
-const PORT = process.env.PORT || 8081;
+//app.use(express.json());
 
-//app.listen(PORT,
-    console.log(`Server started on port ${PORT}`)
-//);
-/*
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-  });
-  
-  app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
-  });
-  */
+
+
+
+app.get('/app.js', (req, res) => {
+  res.send('Hello, Express!');
+});
+
+app.listen(port, () => {
+  console.log(`Node.js HTTP server is running on port ${port}`);
+});
+
